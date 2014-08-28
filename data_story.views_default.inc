@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * nudata_story.views_default.inc
+ * data_story.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function nudata_story_views_default_views() {
+function data_story_views_default_views() {
   $export = array();
 
   $view = new view();
