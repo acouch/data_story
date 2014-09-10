@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * nudata_story.strongarm.inc
+ * data_story.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function nudata_story_strongarm() {
+function data_story_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

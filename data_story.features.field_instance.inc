@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * nudata_story.features.field_instance.inc
+ * data_story.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function nudata_story_field_default_field_instances() {
+function data_story_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-blog-body'

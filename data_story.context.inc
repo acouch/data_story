@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * nudata_story.context.inc
+ * data_story.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function nudata_story_context_default_contexts() {
+function data_story_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

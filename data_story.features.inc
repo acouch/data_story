@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * nudata_story.features.inc
+ * data_story.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function nudata_story_ctools_plugin_api($module = NULL, $api = NULL) {
+function data_story_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -22,14 +22,14 @@ function nudata_story_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function nudata_story_views_api($module = NULL, $api = NULL) {
+function data_story_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_default_search_api_index().
  */
-function nudata_story_default_search_api_index() {
+function data_story_default_search_api_index() {
   $items = array();
   $items['stories_index'] = entity_import('search_api_index', '{
     "name" : "Stories Index",
@@ -112,7 +112,7 @@ function nudata_story_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function nudata_story_default_search_api_server() {
+function data_story_default_search_api_server() {
   $items = array();
   $items['stories_server'] = entity_import('search_api_server', '{
     "name" : "Stories Server",

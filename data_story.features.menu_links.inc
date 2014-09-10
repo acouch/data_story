@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * nudata_story.features.menu_links.inc
+ * data_story.features.menu_links.inc
  */
 
 /**
  * Implements hook_menu_default_menu_links().
  */
-function nudata_story_menu_default_menu_links() {
+function data_story_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: main-menu_stories:stories

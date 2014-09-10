@@ -1,9 +1,9 @@
-name = nuData Story
-description = Story building feature for nuData based on blog.
+name = NuCivic Data Story
+description = Story building features for NuCivic Data based on blog.
 core = 7.x
-package = nuData
+package = NUCIVIC
 version = 7.x-1.0
-project = nudata_story
+project = data_story
 dependencies[] = autocomplete_deluxe
 dependencies[] = blog
 dependencies[] = context
