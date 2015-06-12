@@ -25,7 +25,7 @@ Feature: Testing storyteller role and permissions
       | storyteller  | storyteller@test.com  | 1          | 132006037 |
       And I am logged in as "storyteller"
     When I am on "/admin/content"
-    Then I should see "District Names"
+    Then I should see "About"
 
   @api
   Scenario: Create Blog Content
@@ -76,15 +76,6 @@ Feature: Testing storyteller role and permissions
       And I am logged in as "storyteller"
     When I am on "/node/add/blog"
     Then I should have an "html" text format option 
-
-  @api @javascript
-  Scenario: Use text format php_code
-    Given users:
-      | name         | mail                  | status     | roles     |
-      | storyteller  | storyteller@test.com  | 1          | 132006037 |
-      And I am logged in as "storyteller"
-    When I am on "/node/add/blog"
-    Then I should have an "php_code" text format option 
 
   @api
   Scenario: View own unpublished content

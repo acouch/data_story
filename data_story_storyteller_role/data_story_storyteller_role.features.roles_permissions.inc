@@ -26,7 +26,6 @@ function data_story_storyteller_role_default_roles_permissions() {
       'use text format filtered_html' => TRUE,
       'use text format full_html' => TRUE,
       'use text format html' => TRUE,
-      'use text format php_code' => TRUE,
       'view own unpublished content' => TRUE,
     ),
   );
