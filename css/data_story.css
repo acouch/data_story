@@ -1,0 +1,38 @@
+/***************************
+Data Story Panels
+***************************/
+.view-data-stories .views-row {
+	margin-bottom: 1.75em;
+}
+.view-data-stories .views-row:nth-of-type(5n+5) {
+  clear: left;
+}
+.view-data-stories .more-link {
+  clear: both;
+  display: block;
+  font-weight: bold;
+  margin: 0 0 2em;
+  text-align: right;
+}
+
+/***************************
+Data Story Page
+***************************/
+.view-stories .view-header {
+	margin-bottom: 1em;
+}
+.view-stories .views-row img {
+	width: 100%;
+	height: auto;
+	margin-top: 1.5em;
+}
+.view-stories .views-field-field-tags {
+	margin: 1em 0 2em;
+}
+.view-stories .more-link {
+  clear: both;
+  display: block;
+  font-weight: bold;
+  margin: 1em 0 2em;
+  text-align: right;
+}
