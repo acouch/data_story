@@ -5,6 +5,9 @@
     height: auto;
     vertical-align: bottom;
 }
+.node-type-blog .field-type-image {
+  margin-bottom: 1.5em;
+}
 
 /***************************
 Data Story Panels
@@ -25,6 +28,11 @@ Data Story Panels
 .pane-data-stories-panel-pane-1 .pane-content {
 	margin-left: -15px;
 	margin-right: -15px;
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .pane-data-stories-panel-pane-1 .views-row:nth-of-type(3n+3) {
+    clear: left;
+  }
 }
 #main .views-field-field-image img.latest-stories {
 	/* To Do: fix this in nuboot_radix */
