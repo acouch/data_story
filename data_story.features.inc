@@ -14,6 +14,9 @@ function data_story_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
+  if ($module == "panelizer" && $api == "panelizer") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -34,25 +37,23 @@ function data_story_image_default_styles() {
 
   // Exported image style: latest_stories.
   $styles['latest_stories'] = array(
-    'name' => 'latest_stories',
     'label' => 'latest_stories',
     'effects' => array(
       1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 282,
-          'height' => 130,
+          'width' => 640,
+          'height' => 300,
         ),
         'weight' => 1,
       ),
     ),
+  );
+
+  // Exported image style: story_image_full.
+  $styles['story_image_full'] = array(
+    'label' => 'Story Image - Full Width (Could upscale small images)',
+    'effects' => array(),
   );
 
   return $styles;

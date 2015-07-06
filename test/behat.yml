@@ -16,7 +16,8 @@ default:
       drupal: 
         drupal_root: 'drupal'
       text:
-        log_out: "Logout"
+        log_out: "Log out"
+        log_in: "Log in"
 
 teo:
   extensions:

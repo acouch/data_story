@@ -5,3 +5,14 @@
  */
 
 include_once 'data_story.features.inc';
+
+/**
+ * Hook: hook_node_view().
+ */
+function data_story_node_view($node, $view_mode, $langcode) {
+
+  if ($node->type == 'blog') {
+    // Add CSS to adjust the size of the images to the width of the container.
+    drupal_add_css(drupal_get_path('module', 'data_story') . '/css/data_story.css');
+  }
+}

@@ -22,7 +22,7 @@ function data_story_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -62,9 +62,13 @@ function data_story_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'story_image_full',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -113,6 +117,18 @@ function data_story_field_default_field_instances() {
             'autocomplete' => 0,
           ),
         ),
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
         'preview_image_style' => 'medium',
         'progress_indicator' => 'throbber',
       ),
@@ -133,7 +149,7 @@ function data_story_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',

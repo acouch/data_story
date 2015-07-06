@@ -8,4 +8,4 @@ Feature: Testing module UI
   @api
   Scenario: Stories Index
     Given I am on "/stories"
-    Then I should see "No results were found. Please try another keyword"
+    Then I should see "No stories were found."
