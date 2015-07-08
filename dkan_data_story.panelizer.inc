@@ -1,22 +1,22 @@
 <?php
 /**
  * @file
- * data_story.panelizer.inc
+ * dkan_data_story.panelizer.inc
  */
 
 /**
  * Implements hook_panelizer_defaults().
  */
-function data_story_panelizer_defaults() {
+function dkan_data_story_panelizer_defaults() {
   $export = array();
 
   $panelizer = new stdClass();
   $panelizer->disabled = FALSE; /* Edit this to true to make a default panelizer disabled initially */
   $panelizer->api_version = 1;
-  $panelizer->name = 'node:blog:default:default';
+  $panelizer->name = 'node:dkan_data_story:default:default';
   $panelizer->title = 'Default';
   $panelizer->panelizer_type = 'node';
-  $panelizer->panelizer_key = 'blog';
+  $panelizer->panelizer_key = 'dkan_data_story';
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
@@ -167,7 +167,7 @@ function data_story_panelizer_defaults() {
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $panelizer->display = $display;
-  $export['node:blog:default:default'] = $panelizer;
+  $export['node:dkan_data_story:default:default'] = $panelizer;
 
   return $export;
 }

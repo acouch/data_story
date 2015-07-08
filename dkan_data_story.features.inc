@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * data_story.features.inc
+ * dkan_data_story.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function data_story_ctools_plugin_api($module = NULL, $api = NULL) {
+function dkan_data_story_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -25,19 +25,25 @@ function data_story_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function data_story_views_api($module = NULL, $api = NULL) {
+function dkan_data_story_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function data_story_image_default_styles() {
+function dkan_data_story_image_default_styles() {
   $styles = array();
 
-  // Exported image style: latest_stories.
-  $styles['latest_stories'] = array(
-    'label' => 'latest_stories',
+  // Exported image style: story_image_full.
+  $styles['story_image_full'] = array(
+    'label' => 'Story Image - Full Width (Could upscale small images)',
+    'effects' => array(),
+  );
+
+  // Exported image style: story_image_teaser.
+  $styles['story_image_teaser'] = array(
+    'label' => 'Story Image - Teaser',
     'effects' => array(
       1 => array(
         'name' => 'image_scale_and_crop',
@@ -50,19 +56,13 @@ function data_story_image_default_styles() {
     ),
   );
 
-  // Exported image style: story_image_full.
-  $styles['story_image_full'] = array(
-    'label' => 'Story Image - Full Width (Could upscale small images)',
-    'effects' => array(),
-  );
-
   return $styles;
 }
 
 /**
  * Implements hook_default_search_api_index().
  */
-function data_story_default_search_api_index() {
+function dkan_data_story_default_search_api_index() {
   $items = array();
   $items['stories_index'] = entity_import('search_api_index', '{
     "name" : "Stories Index",
@@ -87,7 +87,7 @@ function data_story_default_search_api_index() {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "0", "bundles" : { "blog" : "blog" } }
+          "settings" : { "default" : "0", "bundles" : { "dkan_data_story" : "dkan_data_story" } }
         },
         "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
@@ -145,7 +145,7 @@ function data_story_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function data_story_default_search_api_server() {
+function dkan_data_story_default_search_api_server() {
   $items = array();
   $items['stories_server'] = entity_import('search_api_server', '{
     "name" : "Stories Server",

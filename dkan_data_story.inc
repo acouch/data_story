@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * data_story.context.inc
+ * dkan_data_story.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function data_story_context_default_contexts() {
+function dkan_data_story_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

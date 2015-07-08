@@ -4,14 +4,14 @@ php:
   - 5.4
 
 mysql:
-  database: data_story_test
+  database: dkan_data_story_test
   username: root
   encoding: utf8
 
 install:
   - cd test
   - composer install
-  - mysql -e 'create database data_story_test;'
+  - mysql -e 'create database dkan_data_story_test;'
   - sudo apt-get update > /dev/null
   - sudo apt-get --quiet=2 install php5-cgi php5-curl php5-gd php5-mysql > /dev/null
 
@@ -39,16 +39,16 @@ before_script:
   - cd ../..
   # Create Nucivic Directory and Copy working copy to proper dir
   - mkdir sites/all/modules/nucivic
-  - cp -r $TRAVIS_BUILD_DIR sites/all/modules/nucivic/data_story
-  - drush -y make --no-core sites/all/modules/nucivic/data_story/data_story.make --no-recursion
+  - cp -r $TRAVIS_BUILD_DIR sites/all/modules/nucivic/dkan_data_story
+  - drush -y make --no-core sites/all/modules/nucivic/dkan_data_story/dkan_data_story.make --no-recursion
   # Go back to TRAVIS_BUILD_DIR and move drupal build inside the test folder
   - cd $TRAVIS_BUILD_DIR/test
   - mv ../../drupal ./
   # Install dkan
   - cd drupal
-  - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1:3306/data_story_test --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
+  - drush si dkan --sites-subdir=default --db-url=mysql://root:@127.0.0.1:3306/dkan_data_story_test --account-name=admin --account-pass=admin  --site-name="DKAN" install_configure_form.update_status_module='array(FALSE,FALSE)' --yes
   # Enable module
-  - drush -y en data_story data_story_storyteller_role
+  - drush -y en dkan_data_story dkan_data_story_storyteller_role
   # Clear cache and run webserver
   - drush cc all --yes
   - drush --quiet --yes --root=$PWD runserver :8888 > /dev/null 2>&1 &

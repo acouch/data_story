@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * data_story.facetapi_defaults.inc
+ * dkan_data_story.facetapi_defaults.inc
  */
 
 /**
  * Implements hook_facetapi_default_facet_settings().
  */
-function data_story_facetapi_default_facet_settings() {
+function dkan_data_story_facetapi_default_facet_settings() {
   $export = array();
 
   $facet = new stdClass();

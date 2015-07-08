@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * data_story_storyteller_role.features.roles_permissions.inc
+ * dkan_data_story_storyteller_role.features.roles_permissions.inc
  */
 
 /**
  * Implements hook_default_roles_permissions().
  */
-function data_story_storyteller_role_default_roles_permissions() {
+function dkan_data_story_storyteller_role_default_roles_permissions() {
   $roles = array();
 
   // Exported role: storyteller

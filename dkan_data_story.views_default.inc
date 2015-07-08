@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * data_story.views_default.inc
+ * dkan_data_story.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function data_story_views_default_views() {
+function dkan_data_story_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'data_stories';
+  $view->name = 'dkan_data_stories';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Data Stories';
+  $view->human_name = 'DKAN Data Stories';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -44,7 +44,7 @@ function data_story_views_default_views() {
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => 'latest_stories',
+    'image_style' => 'story_image_teaser',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
@@ -83,7 +83,7 @@ function data_story_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'blog' => 'blog',
+    'dkan_data_story' => 'dkan_data_story',
   );
 
   /* Display: Four Column pane */
@@ -117,7 +117,7 @@ function data_story_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
-  $export['data_stories'] = $view;
+  $export['dkan_data_stories'] = $view;
 
   $view = new view();
   $view->name = 'stories';
@@ -218,7 +218,7 @@ function data_story_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_stories_index';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'blog' => 'blog',
+    'dkan_data_story' => 'dkan_data_story',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Search: Fulltext search */
