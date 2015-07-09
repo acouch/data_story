@@ -28,45 +28,45 @@ Feature: Testing storyteller role and permissions
     Then I should see "About"
 
   @api
-  Scenario: Create Blog Content
+  Scenario: Create Story Content
     Given users:
       | name         | mail                  | status     | roles     |
       | storyteller  | storyteller@test.com  | 1          | 132006037 |
       And I am logged in as "storyteller"
-    When I am on "/node/add/blog"
-      And I fill in "edit-title" with "Test Blog Post"
+    When I am on "/node/add/dkan-data-story"
+      And I fill in "edit-title" with "Test Story Post"
       And I fill in "body[und][0][value]" with "Test description"
       And I press "Save"
-    Then I should see "Blog entry Test Blog Post has been created"
+    Then I should see "DKAN Data Story Test Story Post has been created"
 
   @api
-  Scenario: Delete own blog content
+  Scenario: Delete own story content
     Given users:
       | name         | mail                  | status     | roles     |
       | storyteller  | storyteller@test.com  | 1          | 132006037 |
-      And "blog" nodes:
+      And "dkan_data_story" nodes:
         | title          | author      | status   |
-        | test Blog Post | storyteller | 1        |
+        | test Story Post | storyteller | 1        |
       And I am logged in as "storyteller"
     When I am on "admin/content"
       And I click "delete"
       And I press "Delete"
-    Then I should see "Blog entry test Blog Post has been deleted"
+    Then I should see "DKAN Data Story Test Story Post has been deleted"
 
   @api
-  Scenario: Edit own blog content
+  Scenario: Edit own story content
     Given users:
       | name         | mail                  | status     | roles     |
       | storyteller  | storyteller@test.com  | 1          | 132006037 |
-      And "blog" nodes:
+      And "dkan_data_story" nodes:
         | title          | author      | status   |
-        | test Blog Post | storyteller | 0        |
+        | test Story Post | storyteller | 0        |
       And I am logged in as "storyteller"
       And I am on "/admin/content"
     When I click "edit"
       And I fill in "body[und][0][value]" with "Test description Update"
       And I press "Save"
-    Then I should see "Blog entry Test Blog Post has been updated"
+    Then I should see "DKAN Data Story Test Story Post has been updated"
 
   @api @javascript
   Scenario: Use text format filtered_html
@@ -74,7 +74,7 @@ Feature: Testing storyteller role and permissions
       | name         | mail                  | status     | roles     |
       | storyteller  | storyteller@test.com  | 1          | 132006037 |
       And I am logged in as "storyteller"
-    When I am on "/node/add/blog"
+    When I am on "/node/add/dkan-data-story"
     Then I should have an "html" text format option 
 
   @api
@@ -82,9 +82,9 @@ Feature: Testing storyteller role and permissions
     Given users:
       | name         | mail                  | status     | roles     |
       | storyteller  | storyteller@test.com  | 1          | 132006037 |
-      And "blog" nodes:
+      And "dkan_data_story" nodes:
         | title          | author      | status   |
-        | test Blog Post | storyteller | 0        |
+        | test Story Post | storyteller | 0        |
       And I am logged in as "storyteller"
     When I am on "/admin/content"
-    Then I should see "test Blog Post"
+    Then I should see "test Story Post"
